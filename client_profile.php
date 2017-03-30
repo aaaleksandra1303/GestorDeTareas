@@ -69,8 +69,7 @@ else{
 	<table>
 		<!-- Aquí irían los datos del cliente. -->
 	</table>
-	<table>
-		<!-- Aquí irían las tareas del cliente -->
-	</table>
+    Aquí va la lista de tareas: <br>
+	<?php include 'tasks_list.php'; ?>
 </body>
 </html>
