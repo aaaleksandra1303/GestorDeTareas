@@ -10,7 +10,6 @@ $logged = isset($_SESSION['user']);
 //Comprobamos si se ha pulsado el botón de cerrar sesión que hay en este propio
 //archivo. Esto tiene uso más adelante.
 $logout = isset($_POST['logout']);
-
 //Aquí revisamos si nos llega algo vía POST del login.
 //En caso de que se haya pulsado el botón de cerrar sesión, 
 //no se hace ninguna comprobación.
@@ -23,15 +22,19 @@ if(isset($_POST['user']) && !$logout){
 	foreach ($json_a as $key => $value) {
 		//Si hay alguno...
 		if($_POST['user'] == $key){
-			//Hacemos que tanto tanto el $_SESSION como el $client tengan el valor
-			//que se ha recibido por POST
-			$_SESSION['user'] = $client = $_POST['user'];
-			//Esta variable controla si la sesión está iniciada.
-			$logged = true;
-			//Esta línea hace que se deje de ejecutar el bucle.
-			//Una vez sabemos que el usuario que ha intentado iniciar sesión está
-			//registrado, no hace falta que sigamos revisando nombres.
-			break;
+			//En esta línea se comprueba si la contraseña introducida coincide
+			//con la guardada
+			if($json_a[$key]['Password'] == $_POST['password']){
+				//Hacemos que tanto tanto el $_SESSION como el $client tengan el valor
+				//que se ha recibido por POST
+				$_SESSION['user'] = $client = $_POST['user'];
+				//Esta variable controla si la sesión está iniciada.
+				$logged = true;
+				//Esta línea hace que se deje de ejecutar el bucle.
+				//Una vez sabemos que el usuario que ha intentado iniciar sesión está
+				//registrado, no hace falta que sigamos revisando nombres.
+				break;
+			}
 		}
 
 	}
