@@ -6,7 +6,7 @@
 </head>
 <body>
     <form action="admin_profile.php" method="POST">
-        User:<input type="text" name="log_admin" placeholder="admin">
+        User:<input type="text" name="admin" placeholder="admin">
         Password:<input type="Password" name="pass_admin" placeholder="Password">
         <input type="submit" name="submit">
     </form>
