@@ -1,4 +1,8 @@
 {
-    "David":{},
-    "Juan":{}
+    "David":{
+    	"Password":"1234"
+    },
+    "Juan":{
+    	"Password":"4321"
+    }
 }
