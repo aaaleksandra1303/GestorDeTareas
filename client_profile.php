@@ -76,6 +76,7 @@ else{
 	<?php include 'tasks_list.php'; ?><br>
 	Aquí pusedes crear nueva tarea: <br>
 	<?php include 'task_form.php'; ?><br>
+    <?php include 'packs_form.php';?>
 
 
 </body>
