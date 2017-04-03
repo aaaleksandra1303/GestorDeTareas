@@ -20,6 +20,7 @@ if(isset($_POST['tec']) && !$logout){
     foreach ($json_a as $key => $value) {
         //Si hay alguno...
         if($_POST['tec'] == $key){
+            if($json_a[$key]['Password'] == $_POST['password']){
             //Hacemos que tanto tanto el $_SESSION como el $tec tengan el valor
             //que se ha recibido por POST
             $_SESSION['tec'] = $tec = $_POST['tec'];
@@ -29,6 +30,7 @@ if(isset($_POST['tec']) && !$logout){
             //Una vez sabemos que el usuario que ha intentado iniciar sesión está
             //registrado, no hace falta que sigamos revisando nombres.
             break;
+            }
         }
     }
 }
