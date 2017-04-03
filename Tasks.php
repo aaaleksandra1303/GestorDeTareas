@@ -8,8 +8,7 @@ class Task{
 	}
 	//Devuelve la lista de tareas como string
 	static function allTasks(){
-		$string = file_get_contents("false_tasks.json");
-		$json_a = json_decode($string, true);
+		$json_a = Task::jsonTasks();
 		$string ="";
 		foreach ($json_a as $key => $value) {
 		    $string = $string . $key;
@@ -28,8 +27,8 @@ class Task{
 	//Añade el tarea creado al archivo JSON
 	function saveTask(){
 		$json_a = Task::jsonTasks();
-		$json_a[$this->title] = "";
-		$string = json_encode($json_a);
+		$json_a[$this->title] = array();
+		$string = json_encode($json_a, JSON_PRETTY_PRINT);
 		file_put_contents('false_tasks.json', $string);
 
 
