@@ -23,7 +23,7 @@ if(isset($_POST['admin']) && !$logout){
         if($_POST['admin'] == $key){
             //En esta línea se comprueba si la contraseña introducida coincide
             //con la guardada
-            if($json_a[$key]['password'] == $_POST['password']){
+            if($json_a[$key]['Password'] == $_POST['password']){
                 //Hacemos que tanto tanto el $_SESSION como el $tec tengan el valor
                 //que se ha recibido por POST
                 $_SESSION['admin'] = $admin = $_POST['admin'];
