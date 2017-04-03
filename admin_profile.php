@@ -61,9 +61,13 @@ else{
     </form>
     <table>
         <!-- Aquí irían los datos del admin. -->
-    </table>
+    </table><br>
     Aquí va la lista de tareas: <br>
-    <?php include 'tasks_list.php'; ?>
+    <?php include 'tasks_list.php'; ?><br>
+    Aquí va la lista de técnicos: <br>
+    <?php include 'tec_list.php'; ?>
+
+
 
 </body>
 </html>
