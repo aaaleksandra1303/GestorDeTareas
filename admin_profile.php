@@ -21,15 +21,19 @@ if(isset($_POST['admin']) && !$logout){
         //Si hay alguno...
 
         if($_POST['admin'] == $key){
-            //Hacemos que tanto tanto el $_SESSION como el $tec tengan el valor
-            //que se ha recibido por POST
-            $_SESSION['admin'] = $admin = $_POST['admin'];
-            //Esta variable controla si la sesión está iniciada.
-            $logged = true;
-            //Esta línea hace que se deje de ejecutar el bucle.
-            //Una vez sabemos que el usuario que ha intentado iniciar sesión está
-            //registrado, no hace falta que sigamos revisando nombres.
-            break;
+            //En esta línea se comprueba si la contraseña introducida coincide
+            //con la guardada
+            if($json_a[$key]['password'] == $_POST['password']){
+                //Hacemos que tanto tanto el $_SESSION como el $tec tengan el valor
+                //que se ha recibido por POST
+                $_SESSION['admin'] = $admin = $_POST['admin'];
+                //Esta variable controla si la sesión está iniciada.
+                $logged = true;
+                //Esta línea hace que se deje de ejecutar el bucle.
+                //Una vez sabemos que el usuario que ha intentado iniciar sesión está
+                //registrado, no hace falta que sigamos revisando nombres.
+                break;
+            }
         }
     }
 }
@@ -65,7 +69,9 @@ else{
     Aquí va la lista de tareas: <br>
     <?php include 'tasks_list.php'; ?><br>
     Aquí va la lista de técnicos: <br>
-    <?php include 'tec_list.php'; ?>
+    <?php include 'tec_list.php'; ?><br>
+     Aquí va la lista de clientes: <br>
+    <?php include 'clients_list.php'; ?><br>
 
 
 
