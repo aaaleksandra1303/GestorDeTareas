@@ -11,7 +11,7 @@ $logged = isset($_SESSION['user']);
 //archivo. Esto tiene uso más adelante.
 $logout = isset($_POST['logout']);
 //Aquí revisamos si nos llega algo vía POST del login.
-//En caso de que se haya pulsado el botón de cerrar sesión, 
+//En caso de que se haya pulsado el botón de cerrar sesión,
 //no se hace ninguna comprobación.
 if(isset($_POST['user']) && !$logout){
 	//Leemos y convertimos en array el archivo json
@@ -73,6 +73,10 @@ else{
 		<!-- Aquí irían los datos del cliente. -->
 	</table>
     Aquí va la lista de tareas: <br>
-	<?php include 'tasks_list.php'; ?>
+	<?php include 'tasks_list.php'; ?><br>
+	Aquí pusedes crear nueva tarea: <br>
+	<?php include 'task_form.php'; ?><br>
+
+
 </body>
 </html>
