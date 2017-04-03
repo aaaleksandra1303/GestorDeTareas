@@ -14,7 +14,6 @@ class Client{
 		foreach ($json_a as $key => $value) {
 		    $string = $string . $key;
 		    $string = $string . "<br>";
-		}	
 		return $string;
 	}
 	//Devuelve la lista de clientes como un objeto JSON
@@ -47,5 +46,7 @@ class Client{
 
 $cliente = new Client("Cliente 4");
 $cliente->saveClient();
+//$cliente->allClients();
+include 'clients_list.php';
 //include 'clients_list.php';
 

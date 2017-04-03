@@ -1,8 +1,1 @@
-{
-    "David":{
-    	"Password":"1234"
-    },
-    "Juan":{
-    	"Password":"4321"
-    }
-}
+{"David":{"Password":"1234"},"Juan":{"Password":"4321"},"Cliente 4":""}
