@@ -1,10 +1,17 @@
 <?php
+require_once 'Bootstrap\Database.php';
+
 
 class Client{
 	private $name;
+	private $password;
+	private $id;
 
-	function __construct($name){
+	function __construct($id=null,$name,$password){
+		$this->id=$id;
 		$this->name = $name;
+		$this->password=$password;
+
 	}
 	//Devuelve la lista de clientes como string
 	static function allClients(){
@@ -14,6 +21,7 @@ class Client{
 		foreach ($json_a as $key => $value) {
 		    $string = $string . $key;
 		    $string = $string . "<br>";
+		}
 		return $string;
 	}
 	//Devuelve la lista de clientes como un objeto JSON
@@ -34,6 +42,19 @@ class Client{
 
 	}
 
+	public static function listClient(){
+		$list = [];
+		$db = Database::getInstance();
+		$req = $db->query('SELECT * FROM clients');
+		foreach($req->fetchAll() as $client){
+			$list[] = new Client($client['client_id'], $client['client_name'], $client['client_password']);
+		}
+
+		return $list;
+
+	}
+
+
 	function getName(){
 		return $this->name;
 	}
@@ -44,9 +65,11 @@ class Client{
 
 }
 
-$cliente = new Client("Cliente 4");
-$cliente->saveClient();
+//$cliente = new Client("Cliente 4","");
+//$cliente->saveClient();
 //$cliente->allClients();
 include 'clients_list.php';
 //include 'clients_list.php';
+
+var_dump(Client::listClient());
 

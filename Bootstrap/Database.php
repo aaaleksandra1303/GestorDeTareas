@@ -1,6 +1,7 @@
 <?php
-namespace DreamWeb\Bootstrap;
-use \PDO;
+//namespace DreamWeb\Bootstrap;
+//use \PDO;
+include 'Config.php';
 class Database
 {
 	private static $instance;
