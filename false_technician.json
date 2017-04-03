@@ -1,5 +1,8 @@
 {
-    "tecnico1":{},
-    "tecnico2":{}
-
+    "tecnico1":{
+    	"Password":"1234"
+    },
+    "tecnico2":{
+    	"Password":"4321"
+    }
 }
