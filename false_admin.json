@@ -1,5 +1,8 @@
 {
-    "admin":{
-        "password":"admin"
+    "admin": {
+        "Password": "admin"
+    },
+    "admin2": {
+        "Password": "admin2"
     }
 }
