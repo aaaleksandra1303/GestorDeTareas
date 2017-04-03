@@ -6,7 +6,7 @@ class Client{
 	function __construct($name){
 		$this->name = $name;
 	}
-
+	//Devuelve la lista de clientes como string
 	static function allClients(){
 		$string = file_get_contents("clientes_falsos.json");
 		$json_a = json_decode($string, true);
@@ -17,14 +17,14 @@ class Client{
 		}	
 		return $string;
 	}
-
+	//Devuelve la lista de clientes como un objeto JSON
 	static function jsonClients(){
 		$string = file_get_contents("clientes_falsos.json");
 		$json_a = json_decode($string, true);
 		return $json_a;
 	}
 
-
+	//Añade el cliente creado al archivo JSON
 	function saveClient(){
 		$json_a = Client::jsonClients();
 		$json_a[$this->name] = "";
