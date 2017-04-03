@@ -65,7 +65,9 @@ else{
     Aquí va la lista de tareas: <br>
     <?php include 'tasks_list.php'; ?><br>
     Aquí va la lista de técnicos: <br>
-    <?php include 'tec_list.php'; ?>
+    <?php include 'tec_list.php'; ?><br>
+     Aquí va la lista de clientes: <br>
+    <?php include 'clients_list.php'; ?><br>
 
 
 
